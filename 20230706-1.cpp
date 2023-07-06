@@ -9,56 +9,74 @@
 #define size 50
 #define c_size 100
 void set_Array(int array[]) {
-	
+
 	for (int i = 0; i < size; i++) {
 		array[i] = rand() % 100;
 	}
-	
+
 
 
 }
 
+void setC_sort(int array1234[]) {
+	int temp;
 
-void set_sort (int array234[]) {
-			
-		int temp;
-	
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < (size- 1) - i; j++) {
-				if (array234[j] > array234[j + 1]) {	// 버블 정렬 사용
-					temp = array234[j];
-					array234[j] = array234[j + 1];
-					array234[j + 1] = temp;
-				}
-
+	for (int i = 0; i < c_size; i++) {
+		for (int j = 0; j < (c_size - 1) - i; j++) {
+			if (array1234[j] > array1234[j + 1]) {	// 버블 정렬 사용
+				temp = array1234[j];
+				array1234[j] = array1234[j + 1];
+				array1234[j + 1] = temp;
 			}
+
 		}
+	}
+	for (int p = 0; p < c_size; p++) {
+		printf("%d    ", array1234[p]);
+	}
+	printf("\n");
+
+
+
+}
+void set_sort(int array234[]) {
+
+	int temp;
+
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < (size - 1) - i; j++) {
+			if (array234[j] > array234[j + 1]) {	// 버블 정렬 사용
+				temp = array234[j];
+				array234[j] = array234[j + 1];
+				array234[j + 1] = temp;
+			}
+
+		}
+	}
+
+	
 		for (int k = 0; k < size; k++) {
 			printf("%d  ", array234[k]);
 		}
-		if (sizeof(array234)/sizeof(int) == 100) {
-			for (int p = 0; p < c_size; p++) {
-				printf("%d  ", array234[p]);
-			}
-		}
-		
+	
+
 }// 배열의 크기가 달라가지고 
-void concat(int array1[size], int array2[size],int array3[100]) { //배열 두개를 합쳐라 !
+void concat(int array1[size], int array2[size], int array3[100]) { //배열 두개를 합쳐라 !
 	for (int i = 0; i < size; i++) {
 		array3[i] = array1[i];
-	
+
 	}
-	
+
 	int num = 50;
 	int num2 = 0;
-	while (num<=99) {
+	while (num <= 99) {
 		array3[num] = array2[num2];
-			num++;
-			num2++;
+		num++;
+		num2++;
 
-}
-	
-	
+	}
+
+
 	for (int k = 0; k < c_size; k++) {
 		printf(" %d  ", array3[k]);
 	}
@@ -67,11 +85,11 @@ void concat(int array1[size], int array2[size],int array3[100]) { //배열 두�
 }
 int main(void)
 {
-		srand((unsigned int)time(NULL));
+	srand((unsigned int)time(NULL));
 	int arr_a[size];
 	int arr_b[size];
 	int arr_c[c_size];
-	
+
 	set_Array(arr_a);
 
 	set_sort(arr_a);
@@ -80,17 +98,18 @@ int main(void)
 
 	set_sort(arr_b);
 
-	
+
 	printf("배열합침");
 	concat(arr_a, arr_b, arr_c);
-	set_sort(arr_c);
-
+	printf("배열합친 배열을 sort 함");
+	setC_sort(arr_c);
+	
 
 	printf("\n");
 
 
 
-	
+
 	return 0;
 }
 
