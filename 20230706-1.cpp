@@ -36,6 +36,11 @@ void set_sort (int array234[]) {
 		for (int k = 0; k < size; k++) {
 			printf("%d  ", array234[k]);
 		}
+		if (sizeof(array234)/sizeof(int) == 100) {
+			for (int p = 0; p < c_size; p++) {
+				printf("%d  ", array234[p]);
+			}
+		}
 		
 }// 배열의 크기가 달라가지고 
 void concat(int array1[size], int array2[size],int array3[100]) { //배열 두개를 합쳐라 !
